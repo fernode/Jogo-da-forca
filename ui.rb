@@ -2,6 +2,26 @@ def avisa_chute_efetuado(chute)
     puts "Você já chutou #{chute}"
 end
 
+def avisa_letra_nao_encontrada(chute)
+    puts "Letra #{chute} não encontrada na palavra secreta"
+end
+
+def avisa_letra_encontrada(total_encontrado)
+    puts "Letra encontrada na palavra #{total_encontrado} vezes"
+end
+
+def avisa_acertou_a_palavra
+    puts "Acertou"
+end
+
+def avisa_nao_acertou_a_palavra
+    puts "Não foi dessa vez, você errou!"
+end
+
+def avisa_pontos(pontos_ate_agora)
+    puts "#{nome} ganhou #{pontos_ate_agora} pontos até agora"
+end
+
 def da_boas_vindas
     puts "Bem vindo ao jogo da forca"
     puts "Qual o seu nome?"
