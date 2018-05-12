@@ -1,37 +1,4 @@
-def da_boas_vindas
-    puts "Bem vindo ao jogo da forca"
-    puts "Qual o seu nome?"
-    nome = gets.strip
-    puts "\n\n\n"
-    puts "Começaremos o jogo para você #{nome}"
-    return nome
-end
-
-def escolhe_palavra_secreta
-    puts "Escolhendo palavra secreta..."
-    palavra_secreta = "programador"
-    puts "Palavra secreta com #{palavra_secreta.size} letras"
-    puts "\n\n\n"
-    return palavra_secreta
-end
-
-def nao_quer_jogar?
-    puts "Deseja jogar novamente? [S/N]"
-    quero_jogar = gets.strip
-    return nao_quero_jogar = quero_jogar.upcase == "N"
-end
-
 nome = da_boas_vindas
-
-def pede_um_chute(erros, chutes)
-    puts "\n\n\n"
-    puts "Erros até agora #{erros}"
-    puts "Você já chutou #{chutes}"
-    puts "Chute uma letra ou uma palavra"
-    chute = gets.strip
-    puts "Será que acertou?"
-    return chute
-end
 
 def joga(nome)
     palavra_secreta = escolhe_palavra_secreta
@@ -43,7 +10,7 @@ def joga(nome)
     while erros < 5
         chute = pede_um_chute erros, chutes
         if chutes.include? chute
-            puts "Você já chutou #{chute}"
+            avisa_chute_efetuado chute
             next
         end
         chutes << chute
