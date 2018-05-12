@@ -1,3 +1,4 @@
+require_relative "ui.rb"
 nome = da_boas_vindas
 
 def joga(nome)
@@ -32,7 +33,7 @@ def joga(nome)
                 avisa_letra_nao_encontrada chute 
                 erros += 1
             else
-                avisa_letra_encontra total_encontrado
+                avisa_letra_encontrada total_encontrado
             end
 
         else
@@ -48,8 +49,8 @@ def joga(nome)
             end
         end
     end
-    
-    avisa_pontos pontos_ate_agora
+
+    avisa_pontos nome,pontos_ate_agora
 end
 
 loop do
