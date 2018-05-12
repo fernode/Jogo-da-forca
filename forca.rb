@@ -29,27 +29,27 @@ def joga(nome)
             total_encontrado = palavra_secreta.count chute
 
             if total_encontrado == 0
-                puts "Letra #{chute} não encontrada na palavra secreta"
+                avisa_letra_nao_encontrada chute 
                 erros += 1
             else
-                puts "Letra #{chute} encontrada na palavra #{total_encontrado} vezes"
+                avisa_letra_encontra total_encontrado
             end
 
         else
             acertou = chute == palavra_secreta
             if acertou
-                puts "Acertou"
+                avisa_acertou_a_palavra
                 pontos_ate_agora += 100
                 break
             else
-                puts "Não foi dessa vez, você errou!"
+                avisa_nao_acertou_a_palavra
                 erros += 1
                 pontos_ate_agora -= 30
             end
         end
     end
-    puts "#{nome} ganhou #{pontos_ate_agora} pontos até agora"
-
+    
+    avisa_pontos pontos_ate_agora
 end
 
 loop do
