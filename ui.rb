@@ -18,7 +18,7 @@ def avisa_nao_acertou_a_palavra
     puts "Não foi dessa vez, você errou!"
 end
 
-def avisa_pontos(pontos_ate_agora)
+def avisa_pontos(nome,pontos_ate_agora)
     puts "#{nome} ganhou #{pontos_ate_agora} pontos até agora"
 end
 
