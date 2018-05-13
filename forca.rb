@@ -1,6 +1,4 @@
 require_relative "ui.rb"
-nome = da_boas_vindas
-
 def joga(nome)
     palavra_secreta = escolhe_palavra_secreta
 
@@ -53,10 +51,14 @@ def joga(nome)
     avisa_pontos nome,pontos_ate_agora
 end
 
-loop do
-    joga nome
-    nao_quero_jogar = nao_quer_jogar?
-    if nao_quero_jogar
-        break
+def jogo_da_forca
+    nome = da_boas_vindas
+
+    loop do
+        joga nome
+        nao_quero_jogar = nao_quer_jogar?
+        if nao_quero_jogar
+            break
+        end
     end
 end
