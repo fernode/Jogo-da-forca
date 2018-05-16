@@ -1,4 +1,29 @@
 require_relative "ui.rb"
+
+def palavra_mascarada(chutes, palavra_secreta)
+    mascara = ""
+    for letra in palavra_secreta.chars
+        if chutes.include? letra
+            mascara << letra
+        else
+            mascara << "_"
+        end
+    end
+    puts mascara
+end
+
+def pede_um_chute_valido(erros,chutes)
+    cabecalho_de_tentativa(erros, chutes)
+    loop do
+        chute = pede_um_chute
+        if chutes.include? chute
+            avisa_chute_efetuado chute
+        else
+            return chute
+        end
+    end
+end
+
 def joga(nome)
     palavra_secreta = escolhe_palavra_secreta
 
@@ -7,24 +32,12 @@ def joga(nome)
     chutes = []
 
     while erros < 5
-        chute = pede_um_chute erros, chutes
-        if chutes.include? chute
-            avisa_chute_efetuado chute
-            next
-        end
+        chute = pede_um_chute_valido erros,chutes
         chutes << chute
+        palavra_mascarada(chutes, palavra_secreta)
 
         chutou_uma_letra = chute.size == 1
         if chutou_uma_letra
-            # letra_procurada = chute[0]
-            # total_encontrado = 0
-
-            # for i in 0..(palavra_secreta.size - 1)
-            #     if palavra_secreta[i] == letra_procurada
-            #         total_encontrado += 1
-            #     end
-            # end  
-            
             total_encontrado = palavra_secreta.count chute
 
             if total_encontrado == 0
