@@ -46,10 +46,13 @@ def nao_quer_jogar?
 end
 
 
-def pede_um_chute(erros, chutes)
+def cabecalho_de_tentativa(erros, chutes)
     puts "\n\n\n"
     puts "Erros até agora #{erros}"
     puts "Você já chutou #{chutes}"
+end
+
+def pede_um_chute
     puts "Chute uma letra ou uma palavra"
     chute = gets.strip
     puts "Será que acertou?"
