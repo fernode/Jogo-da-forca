@@ -9,11 +9,11 @@ def palavra_mascarada(chutes, palavra_secreta)
             mascara << "_"
         end
     end
-    puts mascara
+    mascara
 end
 
-def pede_um_chute_valido(erros,chutes)
-    cabecalho_de_tentativa(erros, chutes)
+def pede_um_chute_valido(erros,chutes, mascara)
+    cabecalho_de_tentativa(erros, chutes, mascara)
     loop do
         chute = pede_um_chute
         if chutes.include? chute
@@ -32,9 +32,9 @@ def joga(nome)
     chutes = []
 
     while erros < 5
-        chute = pede_um_chute_valido erros,chutes
+        mascara = palavra_mascarada chutes, palavra_secreta
+        chute = pede_um_chute_valido erros,chutes,mascara
         chutes << chute
-        palavra_mascarada(chutes, palavra_secreta)
 
         chutou_uma_letra = chute.size == 1
         if chutou_uma_letra
