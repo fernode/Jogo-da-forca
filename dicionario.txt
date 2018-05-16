@@ -1,0 +1,7 @@
+programador
+software
+html
+css
+javascript
+refatoração
+code smell
