@@ -46,8 +46,9 @@ def nao_quer_jogar?
 end
 
 
-def cabecalho_de_tentativa(erros, chutes)
+def cabecalho_de_tentativa(erros, chutes, mascara)
     puts "\n\n\n"
+    puts "A palavra nossa secreta é : #{mascara}"
     puts "Erros até agora #{erros}"
     puts "Você já chutou #{chutes}"
 end
